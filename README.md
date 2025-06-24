@@ -113,19 +113,12 @@ To evaluate StrategicAI, we compiled a dataset of six business case studies from
   
 
 | Case Title | Industry | Source |
-
 |----------------------------------------|-------------------------|------------------------------------------------------------------------------------------------------------------------------|
-
 | Sticky Surfactants (CavalierChem) | Chemicals | Darden Casebook (2021–2022)[¹](https://drive.google.com/file/d/1HrzPiMKPZjdc-yeFe1nH8fMaH1L1C2QW/view) |
-
 | A Golden Ticket? (Whizzy Wilco) | Manufacturing | Darden Casebook (2021–2022)[¹](https://drive.google.com/file/d/1HrzPiMKPZjdc-yeFe1nH8fMaH1L1C2QW/view) |
-
 | Canyon Capital Partners | Private Equity | Darden Casebook (2021–2022)[¹](https://drive.google.com/file/d/1HrzPiMKPZjdc-yeFe1nH8fMaH1L1C2QW/view) |
-
 | Papyr Co | Industrial Goods | Duke MBA Consulting Club Casebook[²](https://drive.google.com/file/d/1KX2pxkQdWSVcT_UNEepSxc2mk3xYCIrh/view) |
-
 | Tres Burritos | Restaurant | NYU Stern School of Business[³](https://drive.google.com/file/d/1MKhqj27wTZ6u3bVHdw_PvLENAkxYdAEy/view) |
-
 | Quest Diagnostics | Diagnostic Laboratories | MIT Sloan[⁴](https://mitsloan.mit.edu/teaching-resources-library/quest-diagnostics-a-improving-performance-call-centers) |
 
   
