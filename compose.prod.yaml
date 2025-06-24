@@ -1,0 +1,54 @@
+networks:
+  app_network:
+    driver: bridge
+
+services:
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.prod
+    container_name: api
+    env_file:
+      - ./backend/.env.prod
+    networks:
+      - app_network
+    ports:
+      - 8000:8000
+    depends_on:
+      - mongo
+
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.prod
+    container_name: web
+    env_file:
+      - ./frontend/.env.prod
+    networks:
+      - app_network
+    ports:
+      - 3000:3000
+
+  mongo:
+    image: mongo:5.0
+    container_name: mongo
+    env_file:
+      - ./db/mongo/.env.prod
+    networks:
+      - app_network
+    volumes:
+      - mongodb_data_prod:/data/db
+
+  mongo-express:
+    image: mongo-express:1.0.2-20-alpine3.19
+    container_name: mongo-express
+    env_file:
+      - ./db/mongo_express/.env.prod
+    depends_on:
+      - mongo
+    networks:
+      - app_network
+    ports:
+      - 8081:8081
+volumes:
+  mongodb_data_prod:

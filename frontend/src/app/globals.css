@@ -1,0 +1,115 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Define the custom properties (CSS variables) for light and dark modes */
+  :root {
+    /* Light theme */
+    --background: #f9f9f9;
+    --foreground: #181818;
+    --primary: #2563eb;
+    --secondary: hsl(240, 4.8%, 95.9%);
+    --card: #d1d1d1;
+    --border: hsl(240, 5.9%, 90%);
+    --input: hsl(240, 5.9%, 90%);
+    --ring: #181818;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme */
+    --background: #181818;
+    --foreground: hsl(0, 0%, 98%);
+    --primary: #ff4a4a;
+    --secondary: hsl(240, 3.7%, 15.9%);
+    --card: hsl(231, 22%, 24%);
+    --border: hsl(240, 3.7%, 15.9%);
+    --input: hsl(240, 5.56%, 50.59%);
+    --ring: hsl(240, 4.9%, 83.9%);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Now apply these variables to utility classes */
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+  }
+
+  /* Apply the background color for specific elements if needed */
+  .bg-background {
+    background-color: var(--background);
+  }
+
+  .text-foreground {
+    color: var(--foreground);
+  }
+
+  .bg-primary {
+    background-color: var(--primary);
+  }
+
+  .text-primary {
+    color: var(--primary);
+  }
+
+  .bg-secondary {
+    background-color: var(--secondary);
+  }
+
+  input {
+    background-color: var(--input); /* Ensure --input has the desired color */
+    color: var(--foreground);
+  }
+
+  .dark input {
+    background-color: var(
+      --input-dark
+    ); /* Or another defined variable for dark mode */
+  }
+  .text-secondary {
+    color: var(--secondary);
+  }
+}
+
+@layer utilities {
+  .default-transition {
+    @apply transition duration-300 ease-in-out;
+  }
+
+  .btn-press-effect {
+    @apply transition duration-300 ease-in-out active:scale-95;
+  }
+
+  .responsive {
+    @apply flex flex-col items-start justify-between gap-5 md:flex-row md:items-center;
+  }
+
+  .flex-center {
+    @apply flex items-center;
+  }
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
