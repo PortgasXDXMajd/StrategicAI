@@ -10,8 +10,8 @@ transformers==4.40.1
 bs4==0.0.2
 requests==2.31.0
 torch==2.3.0
-openai==1.57.0
-langchain_openai 
+openai>=1.68.2,<2.0.0
+langchain-openai==0.3.23
 langchain_fireworks
 python-docx==1.1.2
 pdfplumber==0.11.4
