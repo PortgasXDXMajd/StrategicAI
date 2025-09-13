@@ -8,7 +8,7 @@ from ..core.language_models.fireworksai_llm import FireworkAILLM
 
 class Core:
     def __init__(self, llm_config=None):
-        self.search_engine = WebSearchEngine(search_engine=SearchEngine.Google)
+        self.search_engine = WebSearchEngine(search_engine=SearchEngine.DuckDuck)
         self.scraper = WebScraper()
 
         self.llm_config = llm_config or LLMConfigDto()

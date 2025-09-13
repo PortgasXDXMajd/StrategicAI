@@ -1,6 +1,5 @@
 from app.core.cohere_retriever import CohereRetriever
 from .models import SearchEngine, SearchResult, Website
-from .google_search_engine import GoogleSearchEngine
 from .duck_duck_search_engine import DuckDuckSearchEngine
 
 
@@ -11,8 +10,6 @@ class WebSearchEngine:
 
         if search_engine == SearchEngine.DuckDuck:
             self.engine = DuckDuckSearchEngine()
-        elif search_engine == SearchEngine.Google:
-            self.engine = GoogleSearchEngine()
         else:
             raise Exception(
                 f"Search Engine '{search_engine.value}' is not supported.")
