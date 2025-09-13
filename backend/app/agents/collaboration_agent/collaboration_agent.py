@@ -73,10 +73,10 @@ class CollaborationAgent:
     async def init_agent(self):
         await broadcast(self.tree.id, True, True)
         
-        skip_next_step = await self.build_tree()
+        # skip_next_step = await self.build_tree()
 
-        if not skip_next_step:
-            await self.verify_tree()
+        # if not skip_next_step:
+        #     await self.verify_tree()
         
         await broadcast(self.tree.id, "Initialize Collaboration Agent", True)
 
