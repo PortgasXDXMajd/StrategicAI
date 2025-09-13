@@ -1,18 +1,22 @@
 from app.core.cohere_retriever import CohereRetriever
+from app.core.web_search.google_search_engine import GoogleSearchEngine
 from .models import SearchEngine, SearchResult, Website
 from .duck_duck_search_engine import DuckDuckSearchEngine
 
 
 class WebSearchEngine:
 
-    def __init__(self, search_engine: SearchEngine = SearchEngine.DuckDuck):
+    def __init__(self, search_engine: SearchEngine = SearchEngine.Google):
         self.cohere_retriver =  CohereRetriever()
-
-        if search_engine == SearchEngine.DuckDuck:
-            self.engine = DuckDuckSearchEngine()
-        else:
-            raise Exception(
-                f"Search Engine '{search_engine.value}' is not supported.")
+        self.engine = GoogleSearchEngine()
+        
+        # if search_engine == SearchEngine.DuckDuck:
+        #     self.engine = DuckDuckSearchEngine()
+        # elif search_engine == SearchEngine.Google:
+        #     self.engine = GoogleSearchEngine()
+        # else:
+        #     raise Exception(
+        #         f"Search Engine '{search_engine.value}' is not supported.")
 
     def search(self, query: str, website: Website = Website.General, topk: int = 3) -> SearchResult:
         if website != Website.General:

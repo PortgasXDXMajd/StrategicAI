@@ -33,7 +33,7 @@ interface CompanyInfoGatheringPageProps {
 }
 
 const FormSchema = z.object({
-  name: z.string().min(1, 'Please tell us your company name'),
+  name: z.string().min(1, 'Please tell us your organization name'),
   country: z.string().min(1, 'We need to know where you operate'),
   industry: z.string().min(1, 'Industry is required'),
 });
@@ -66,7 +66,7 @@ const CompanyInfoGatheringPage = ({
       });
 
       if (response.status !== 200) {
-        throw new Error('Failed to update company data.');
+        throw new Error('Failed to update organization data.');
       }
 
       const { id, login_email, first_login, profile } = response.data.body;
@@ -83,7 +83,7 @@ const CompanyInfoGatheringPage = ({
 
       if (profile?.questions_to_user?.length ?? 0 > 0) {
         toast('Success', {
-          description: 'Company info updated, but...',
+          description: 'Organization info updated, but...',
         });
         router.push('/company/info-gathering/continue');
       } else {
@@ -103,7 +103,7 @@ const CompanyInfoGatheringPage = ({
     <div className="flex items-center justify-center mt-10">
       <div className="w-full max-w-lg shadow-lg rounded-lg">
         <h1 className="text-4xl font-bold text-center mb-8">
-          Tell us about your company
+          Tell us about your organization
         </h1>
 
         <Form {...form}>
@@ -113,7 +113,7 @@ const CompanyInfoGatheringPage = ({
               name="name"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Company Name</FormLabel>
+                  <FormLabel>Organization Name</FormLabel>
                   <FormControl>
                     <Input
                       disabled={isLoading}
@@ -174,7 +174,7 @@ const CompanyInfoGatheringPage = ({
               type="submit"
               className="w-full py-4 text-lg font-bold rounded-md"
             >
-              {isLoading ? <LoadingComponent /> : 'Update Company Info'}
+              {isLoading ? <LoadingComponent /> : 'Update Organization Info'}
             </Button>
           </form>
         </Form>

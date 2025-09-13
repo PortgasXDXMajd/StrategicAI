@@ -116,10 +116,10 @@ const Navbar = () => {
       if (response.status === 200) {
         dispatch(setCompanyInfo(response.data.body));
       } else {
-        console.error('Failed to fetch company info:', response.data.message);
+        console.error('Failed to fetch organization info:', response.data.message);
       }
     } catch (error) {
-      console.error('Error fetching company info:', error);
+      console.error('Error fetching organization info:', error);
     }
   };
 
@@ -194,7 +194,7 @@ const Navbar = () => {
                 className="cursor-pointer items-center space-x-3 "
               >
                 <Iconify icon="mdi:account-outline" />
-                <span>Profile</span>
+                <span>Organization Profile</span>
               </DropdownMenuItem>
               <DialogTrigger asChild>
                 <DropdownMenuItem

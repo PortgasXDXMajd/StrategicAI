@@ -6,7 +6,7 @@ from app.models.dynamic_models.company_profile import CompanyProfile
 class Company(BaseEntity):
     login_email: EmailStr = Field()
     password: str = Field()
-    first_login: bool = False # Default must be set to True for gathering Company information, but I omitted it for now
+    first_login: bool = False
     profile: Optional[CompanyProfile] = Field(default=None)
 
 class CompanyDto:
