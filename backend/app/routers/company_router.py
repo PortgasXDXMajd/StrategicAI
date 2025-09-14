@@ -65,3 +65,16 @@ async def update_company_profile(
         return ResponseHelper.success(res)
     except Exception as e:
         return ResponseHelper.error(msg=str(e))
+    
+@router.delete("/profile")
+async def delete_company_profile(
+    caller: Company = Depends(get_caller),
+    request : Request = None):
+    try:
+        company_service = CompanyService(request.state.llm_config)
+        
+        res = await company_service.delete_conpany_profile(caller.id)
+        
+        return ResponseHelper.success(res)
+    except Exception as e:
+        return ResponseHelper.error(msg=str(e))

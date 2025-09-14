@@ -28,6 +28,10 @@ class CompanyService {
     }
     return null;
   }
+  static async deleteProfile(): Promise<Company | null> {
+    await axios.delete('/company/profile');
+    return null;
+  }
 }
 
 export default CompanyService;

@@ -18,6 +18,9 @@ export const companySlice = createSlice({
       state.first_login = action.payload.first_login;
       state.profile = action.payload.profile;
     },
+    deleteCompanyProfile: (state) => {
+      state.profile = undefined;
+    },
     setCompanyProfile: (state, action: PayloadAction<CompanyProfile>) => {
       state.profile = action.payload;
     },
@@ -40,5 +43,6 @@ export const {
   setCompanyContinuationToken,
   resetCompanyInfo,
   companyLogout,
+  deleteCompanyProfile,
 } = companySlice.actions;
 export default companySlice.reducer;

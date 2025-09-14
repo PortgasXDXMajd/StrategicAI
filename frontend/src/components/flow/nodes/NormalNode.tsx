@@ -54,6 +54,7 @@ const NormalNode = ({ id, data }: NodeProps<NormalNode>) => {
         <div className="flex flex-col">
           <p className="text-left text-md font-bold">
             {data.node.text}
+            {' '}
             <span className="font-semibold">({data.node.certainty}%)</span>
           </p>
           <div className="pt-2 pb-2">

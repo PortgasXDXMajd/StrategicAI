@@ -45,7 +45,7 @@ class CompanyService:
 
         # 3. use LLM to update/create a company profile from scraped data
         sys_prmt = ExtractorPrompts.get_system_prompt()
-        usr_prmt = ExtractorPrompts.get_prompt_to_extract_company_information(company, search_res, scrap_res)
+        usr_prmt = ExtractorPrompts.get_prompt_to_extract_company_information(company.profile, search_res, scrap_res)
 
         company.profile, _  = await self.core_engine.model.generate(sys_prmt, usr_prmt, CompanyProfile)
         company.first_login = False
@@ -77,7 +77,7 @@ class CompanyService:
             user_input = {'text':text, 'files':files_facts}
 
         sys_prmt = ExtractorPrompts.get_system_prompt()
-        usr_prmt = ExtractorPrompts.get_prompt_to_update_company_profile(company, user_input)
+        usr_prmt = ExtractorPrompts.get_prompt_to_update_company_profile(company.profile, user_input)
 
         company.profile, _  = await self.core_engine.model.generate(sys_prmt, usr_prmt, CompanyProfile)
         
@@ -103,3 +103,13 @@ class CompanyService:
 
         return CompanyDto(company)
 
+    async def delete_conpany_profile(self, id: str) -> CompanyDto:
+        company = await self.repos.companies.get_by_id(id)
+        if not company:
+            raise Exception("Company was not found")
+        
+        company.profile = None
+        
+        await self.repos.companies.update(id, company)
+
+        return CompanyDto(company)

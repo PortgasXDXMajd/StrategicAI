@@ -19,12 +19,12 @@ class CompanyProfile(WithQuestionsRT):
     
     description: Optional[str] = Field(
         default=None,
-        description="text based long description about the company in general that is suitable for end users to read summarizing all the information known about the company",
+        description="text based short description about the company in general that is suitable for end users to read summarizing what is the company about.",
     )
 
     dynamic_fields: Optional[Dict[str, Any]] = Field(
         default=None,
-        description="A JSON object containing additional, dynamic data about the company, such as revenue, headquarters, or any other relevant business metrics or even complex objects like SWOT analysis.",
+        description="A JSON object containing all known information about the company that does not fit in the predefined fields ignoring the sources on data.",
     )
 
     @classmethod
