@@ -16,6 +16,8 @@ services:
       - 8000:8000
     depends_on:
       - mongo
+    volumes:
+      - ./backend:/code
 
   web:
     build:
@@ -28,6 +30,9 @@ services:
       - app_network
     ports:
       - 3000:3000
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
 
   mongo:
     image: mongo:5.0
