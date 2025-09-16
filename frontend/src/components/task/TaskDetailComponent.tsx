@@ -200,7 +200,7 @@ const TaskDetailComponent = () => {
                 <Iconify icon="ph:file-doc" className="mr-2 text-blue-600" />
                 Word Document
               </DropdownMenuItem>
-              <DropdownMenuItem
+              {/* <DropdownMenuItem
                 className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                 onClick={async () => {
                   const taskGen = new TaskDocumentGenerator(selectedTask.id);
@@ -209,7 +209,7 @@ const TaskDetailComponent = () => {
               >
                 <Iconify icon="ph:file-pdf" className="mr-2 text-red-600" />
                 PDF Document
-              </DropdownMenuItem>
+              </DropdownMenuItem> */}
               <DropdownMenuItem
                 className="flex items-center px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 cursor-pointer"
                 onClick={async () => {
