@@ -1,6 +1,6 @@
 # StrategicAI
 
-A full-stack AI-powered strategic application built with FastAPI, Next.js, and MongoDB. This repository contains the complete source code for the StrategicAI platform developed as part of academic research.
+A full-stack AI-powered decision support tool for strategic decision-making built with FastAPI, Next.js, and MongoDB. This repository contains the complete source code for the *StrategicAI* platform developed as part of academic research. The corresponding research paper titled **"An LLM-Based Decision Support System for Strategic Decision-Making"** was presented at the European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases ([ECML PKDD 2025](https://ecmlpkdd.org/2025/)) on September 15-19, 2025. A preprint of the paper can be found [here](https://ecmlpkdd-storage.s3.eu-central-1.amazonaws.com/preprints/2025/demos/preprint_ecml_pkdd_2025_demos_1684.pdf).
 
 
 
