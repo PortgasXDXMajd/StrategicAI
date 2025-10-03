@@ -62,7 +62,7 @@ Before running StrategicAI, ensure you have the following installed:
     ```
 
     
-2.  **Set Required Environment Variables** Edit your environment file and configure the following variables:
+2.  **Set required environment variables:** Edit your environment file(s) [backend/.env.dev](https://github.com/PortgasXDXMajd/StrategicAI/blob/main/backend/.env.dev) and/or [backend/.env.prod](https://github.com/PortgasXDXMajd/StrategicAI/blob/main/backend/.env.prod) and configure the following variables:
 
     ```bash
 
