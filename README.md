@@ -17,27 +17,27 @@ StrategicAI follows a modern microservices architecture with the following compo
 ## Project Structure
 ```
     StrategicAI/
-    ├── backend/ 						# FastAPI backend application
-    │├── app/ 							# Main application package
-    ││├── agents/ 					# AI agent implementations
-    ││├── core/ 						# Core application logic
-    ││├── helpers/ 					# Utility functions and helpers
-    ││├── middleware/ 			# Custom middleware components
-    ││├── models/ 					# Data models and schemas
-    ││├── repositories/ 		# Data access layer
-    ││├── routers/ 					# API route definitions
-    ││└── services/ 				# Business logic services
-    │├── main.py 						# FastAPI application entry point
-    │├── requirements.txt 	# Python dependencies
-    │├── Dockerfile.dev 		# Development Docker configuration
-    │└── Dockerfile.prod 		# Production Docker configuration
-    ├── frontend/ 					# Next.js frontend application
-    ├── db/ 								# Database env for dev and prod
-    ├── .env.dev 						# Development environment variables
-    ├── .env.prod 					# Production environment variables
-    ├── compose.dev.yaml 		# Development Docker Compose configuration
-    ├── compose.prod.yaml 	# Production Docker Compose configuration
-    ├── start.sh 						# Application startup script
+    ├── backend/            # FastAPI backend application
+    │├── app/               # Main application package
+    ││├── agents/           # AI agent implementations
+    ││├── core/             # Core application logic
+    ││├── helpers/          # Utility functions and helpers
+    ││├── middleware/       # Custom middleware components
+    ││├── models/           # Data models and schemas
+    ││├── repositories/     # Data access layer
+    ││├── routers/          # API route definitions
+    ││└── services/         # Business logic services
+    │├── main.py            # FastAPI application entry point
+    │├── requirements.txt   # Python dependencies
+    │├── Dockerfile.dev     # Development Docker configuration
+    │└── Dockerfile.prod    # Production Docker configuration
+    ├── frontend/           # Next.js frontend application
+    ├── db/                 # Database env for dev and prod
+    ├── .env.dev            # Development environment variables
+    ├── .env.prod           # Production environment variables
+    ├── compose.dev.yaml    # Development Docker Compose configuration
+    ├── compose.prod.yaml   # Production Docker Compose configuration
+    ├── start.sh            # Application startup script
     └── README.md
 ```
 
